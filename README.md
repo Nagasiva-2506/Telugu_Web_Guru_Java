@@ -1,1 +1,253 @@
 # Telugu_Web_Guru_Java
+
+Data types
+``````````
+
+Primitive
+`````````
+
+		  integer 	:	byte ,short ,int,long
+
+		  float		:	float
+
+		  boolean 	:	boolean
+
+		  double 	:	double
+
+		  character	:	char
+
+Non-primitive
+`````````````
+class ,interface ,array ,enum
+
+===========================================================================================================================================================
+Operators:
+`````````
+
+1\. Arithmetic Operators
+
+
+
+2\. Unary Operators: Operate on a single operand
+
+	+ (Unary plus - indicates positive value)
+
+	- (Unary minus - negates a value)
+
+	++ (Increment - increases value by 1)
+
+	-- (Decrement - decreases value by 1)
+
+	! (Logical NOT - inverts a boolean value)
+
+
+
+3\. Assignment Operators: Assign values to variables.
+
+	= (Simple assignment)
+
+	+= (Add and assign)
+
+	-= (Subtract and assign)
+
+	*= (Multiply and assign)
+
+	/= (Divide and assign)
+
+	%= (Modulus and assign)
+
+
+
+4\. Relational (Comparison) Operators: Compare two operands and return a boolean result.
+
+	== (Equal to)
+
+	!= (Not equal to)
+
+	> (Greater than)
+
+	< (Less than)
+
+	>= (Greater than or equal to)
+
+	<= (Less than or equal to)
+
+
+
+5\. Logical Operators: Combine boolean expressions.
+
+	&& (Logical AND - true if both operands are true)
+
+	|| (Logical OR - true if at least one operand is true) 
+
+
+
+6\. Bitwise Operators: Perform operations on individual bits of integer types.
+
+	& (Bitwise AND)
+
+	|| (Bitwise OR)
+
+	^ (Bitwise XOR)
+
+	~ (Bitwise Complement)
+
+	<< (Signed Left Shift)
+
+	>> (Signed Right Shift)
+
+	>>> (Unsigned Right Shift)
+
+7\. Ternary (Conditional) Operator: A shorthand for an if-then-else statement.
+
+	condition ? expression1 : expression2
+
+8\. Type Comparison Operator:
+
+	instanceof: Checks if an object is an instance of a particular class or interface.
+
+============================================================================================================================================================
+
+Control statements:
+
+``````````````````
+for();
+while();
+do while();
+
+
+while loop
+``````````
+
+class Whileloop {   
+
+   public static void main(String[] args) {
+
+      int i=0;
+
+        while (i<6)
+
+        {
+
+            System.out.println("Hello");
+
+            i++;
+	}
+   }
+}
+
+
+
+---------------------------------------------------------------------
+
+For loop
+````````
+for(int i=1;i<=10;i++){
+
+            System.out.print(i+" ");
+	}
+Another way of for loop
+```````````````````````
+int i;
+for(i=1; ; )
+{
+if(i<10)
+	{
+	  System.out.println(i);
+	  i\*=2;	
+	}
+
+	else
+	break;
+}
+System.out.println(i);
+============================================================================================================================================================
+
+I/O operations :
+
+InputStreamReader i = new InuttStreamReader(System.in);
+BuferedReader b = new BufferedReader(i);
+
+String name = b.readLine();
+
+=>  or we can use Scanner  class also .
+
+Scanner s = new Scanner (System.in);
+
+
+
+Example program:
+
+import java.util.Scanner;
+
+public class PrimitiveInputExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Taking input for each primitive type
+
+        System.out.print("Enter a byte value: ");
+        byte byteValue = scanner.nextByte();					
+
+        System.out.print("Enter a short value: ");
+        short shortValue = scanner.nextShort();
+
+        System.out.print("Enter an int value: ");
+        int intValue = scanner.nextInt();
+
+        System.out.print("Enter a long value: ");
+        long longValue = scanner.nextLong();
+
+        System.out.print("Enter a float value: ");
+        float floatValue = scanner.nextFloat();
+
+        System.out.print("Enter a double value: ");
+        double doubleValue = scanner.nextDouble();
+
+        System.out.print("Enter a boolean value (true/false): ");
+        boolean booleanValue = scanner.nextBoolean();
+
+        System.out.print("Enter a character: ");
+        char charValue = scanner.next().charAt(0); // Read string and take first character
+
+        // Displaying the values
+        System.out.println("\nYou entered:");
+        System.out.println("Byte: " + byteValue);
+        System.out.println("Short: " + shortValue);
+        System.out.println("Int: " + intValue);
+        System.out.println("Long: " + longValue);
+        System.out.println("Float: " + floatValue);
+        System.out.println("Double: " + doubleValue);
+        System.out.println("Boolean: " + booleanValue);
+        System.out.println("Char: " + charValue);
+
+        scanner.close();
+    }
+}
+============================================================================================================================================================
+Arrays in java :
+```````````````
+OneDimensional array:
+
+// Declaration
+dataType[] arrayName;
+
+// Declaration + Memory Allocation
+dataType[] arrayName = new dataType[size];
+
+// Declaration + Initialization
+dataType[] arrayName = {value1, value2, value3, ..., valueN};
+
+
+1) Indexing  		: 	Array indices start from 0. So, the first element is at index 0, second at 1, and so on.
+2) Fixed Size 		:	Once declared, the size of an array cannot be changed.
+3) Homogeneous Elements : 	All elements must be of the same data type.
+4) Accessing Elements   : 	Use arrayName[index] to access or modify elements.
+5) Length 		: 	Use arrayName.length to get the number of elements.
+
+Common points to remember :
+- Traversal: Loop through each element
+- Search: Linear search or binary search (if sorted)
+- Sort: Use Arrays.sort(array)
+- Copy: Use Arrays.copyOf() or manual loop
+- Reverse: Swap elements from both ends
