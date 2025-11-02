@@ -403,6 +403,11 @@ System.out.println(sbf); // Output: Hello World
 - Use StringBuffer for thread-safe operations.
 
 
+OOPS Features:
 
-
-
+Class 
+Object 
+Abstraction
+Encapsulation
+Polymorphism
+Inheritance
