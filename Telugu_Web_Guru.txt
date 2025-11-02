@@ -269,3 +269,87 @@ public class ArrayExample {
         }
     }
 }
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2D Array:
+
+A 2D array in Java is an array of arrays, allowing you to store data in a grid-like structure with rows and columns. It's ideal for representing matrices, tables, or board games.
+
+🛠️ Declaration and Initialization
+
+// Declaration
+int[][] arr;
+
+// Initialization
+arr = new int[3][4]; // 3 rows, 4 columns
+
+// Declaration + Initialization
+int[][] grid = {
+    {10, 20},
+    {30, 40},
+    {50, 60}
+};
+
+
+
+📦 Accessing and Modifying Elements
+System.out.println(grid[1][1]); // Output: 40
+
+grid[2][0] = 55; // Update value at row 2, column 0
+
+
+
+🔁 Iterating Through a 2D Array
+
+for (int i = 0; i < grid.length; i++) {
+    for (int j = 0; j < grid[i].length; j++) {
+        System.out.print(grid[i][j] + " ");
+    }
+    System.out.println();
+}
+
+
+
+✅ Example Program
+
+public class TwoDArrayExample {
+    public static void main(String[] args) {
+        int[][] marks = new int[2][3];
+
+        // Assign values
+        marks[0][0] = 85;
+        marks[0][1] = 90;
+        marks[0][2] = 78;
+        marks[1][0] = 88;
+        marks[1][1] = 92;
+        marks[1][2] = 81;
+
+        // Print values
+        for (int i = 0; i < marks.length; i++) {
+            for (int j = 0; j < marks[i].length; j++) {
+                System.out.print(marks[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+🧩 Key Concepts
+Declaration  int[[]arr;
+Initialization arr=new int[rows][cols];
+Access arr[i][j];
+Update arr[i][j] = value;
+length   arr.length for rows ,arr[i].length for colums
+Iteration   we use nested for loop.
+
+🧠 Use Cases
+- Matrices and mathematical operations
+- Game boards (like chess or tic-tac-toe)
+- Tabular data (student marks, sales reports)
+- Image processing (pixel grids)
+For a deeper dive into 2D arrays with more examples and variations (like using Scanner or String arrays), check out JavaTutoring's guide or Educba's comprehensive tutorial.
+
+
+
