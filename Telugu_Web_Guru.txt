@@ -349,7 +349,60 @@ Iteration   we use nested for loop.
 - Game boards (like chess or tic-tac-toe)
 - Tabular data (student marks, sales reports)
 - Image processing (pixel grids)
-For a deeper dive into 2D arrays with more examples and variations (like using Scanner or String arrays), check out JavaTutoring's guide or Educba's comprehensive tutorial.
+
+
+===================================================================================================================================================================
+
+String ,StringBuilder & String buffer: 
+
+In Java, String, StringBuilder, and StringBuffer are classes used to handle text, but they differ in mutability, performance, and thread safety.
+
+1. String – Immutable Text
+- Immutable: Once created, a String cannot be changed.
+- Stored in String Pool: Helps with memory efficiency.
+- Best for: Fixed or rarely modified text.
+✅ Example:
+String str = "Hello";
+str.concat(" World");
+System.out.println(str); // Output: Hello
+
+str.concat(" World") creates a new string but doesn't change str.
+
+🧱 2. StringBuilder – Mutable & Fast
+- Mutable: Can change content without creating new objects.
+- Not thread-safe: Faster in single-threaded environments.
+- Best for: Frequent string modifications (e.g., loops, appends).
+✅ Example:
+StringBuilder sb = new StringBuilder("Hello");
+sb.append(" World");
+System.out.println(sb); // Output: Hello World
+
+
+🔧 Common Methods:
+- append()
+- insert()
+- delete()
+- reverse()
+- toString()
+
+
+🧵 3. StringBuffer – Mutable & Thread-Safe
+- Mutable: Like StringBuilder.
+- Thread-safe: Synchronized methods.
+- Best for: Multi-threaded applications needing safe string operations.
+✅ Example:
+StringBuffer sbf = new StringBuffer("Hello");
+sbf.append(" World");
+System.out.println(sbf); // Output: Hello World
+
+
+
+🧠 When to Use What?
+- Use String when the text doesn’t change.
+- Use StringBuilder for fast, single-threaded edits.
+- Use StringBuffer for thread-safe operations.
+
+
 
 
 
