@@ -411,3 +411,182 @@ Abstraction
 Encapsulation
 Polymorphism
 Inheritance
+
+🧩 1. Abstraction
+✅ Definition:
+
+Abstraction is the process of hiding implementation details and showing only the essential features of an object.
+It helps to reduce complexity and increase reusability.
+
+Achieved using abstract classes or interfaces.
+
+💻 Example:
+// Abstract class example
+abstract class Vehicle {
+    abstract void start(); // abstract method (no body)
+}
+
+class Car extends Vehicle {
+    void start() {
+        System.out.println("Car starts with a key");
+    }
+}
+
+class Bike extends Vehicle {
+    void start() {
+        System.out.println("Bike starts with a kick");
+    }
+}
+
+public class AbstractionExample {
+    public static void main(String[] args) {
+        Vehicle v1 = new Car();
+        Vehicle v2 = new Bike();
+
+        v1.start();
+        v2.start();
+    }
+}
+
+🧠 Output:
+Car starts with a key
+Bike starts with a kick
+
+=============================================================================================
+🧳 2. Encapsulation
+✅ Definition:
+
+Encapsulation means wrapping data (variables) and code (methods) together as a single unit.
+It helps to protect data from unauthorized access by using private fields and public getters/setters.
+
+💻 Example:
+class Student {
+    private String name; // private data
+    private int age;
+
+    // Public getter and setter methods
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getName() {
+        return name;
+    }
+
+    public void setAge(int age) {
+        if (age > 0) {
+            this.age = age;
+        }
+    }
+    public int getAge() {
+        return age;
+    }
+}
+
+public class EncapsulationExample {
+    public static void main(String[] args) {
+        Student s = new Student();
+        s.setName("John");
+        s.setAge(20);
+
+        System.out.println("Name: " + s.getName());
+        System.out.println("Age: " + s.getAge());
+    }
+}
+
+🧠 Output:
+Name: John
+Age: 20
+
+=============================================================================================
+🎭 3. Polymorphism
+✅ Definition:
+
+Polymorphism means “many forms” — it allows one action to behave differently based on the object.
+
+Achieved through:
+
+Compile-time polymorphism → Method Overloading
+
+Runtime polymorphism → Method Overriding
+
+💻 (a) Compile-time Polymorphism - Method Overloading
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+public class OverloadingExample {
+    public static void main(String[] args) {
+        Calculator c = new Calculator();
+        System.out.println(c.add(10, 20));       // calls 2-parameter method
+        System.out.println(c.add(10, 20, 30));   // calls 3-parameter method
+    }
+}
+
+🧠 Output:
+30
+60
+
+💻 (b) Runtime Polymorphism - Method Overriding
+class Animal {
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class OverridingExample {
+    public static void main(String[] args) {
+        Animal a = new Dog(); // upcasting
+        a.sound(); // runtime polymorphism
+    }
+}
+
+🧠 Output:
+Dog barks
+=============================================================================================
+
+🧬 4. Inheritance
+✅ Definition:
+
+Inheritance allows a class (child/subclass) to inherit properties and methods from another class (parent/superclass).
+It promotes code reusability and hierarchical classification.
+
+💻 Example:
+class Person {
+    String name = "John";
+
+    void showName() {
+        System.out.println("Name: " + name);
+    }
+}
+
+class Employee extends Person {
+    String company = "Google";
+
+    void showCompany() {
+        System.out.println("Company: " + company);
+    }
+}
+
+public class InheritanceExample {
+    public static void main(String[] args) {
+        Employee e = new Employee();
+        e.showName();      // inherited method
+        e.showCompany();   // own method
+    }
+}
+
+🧠 Output:
+Name: John
+Company: Google
