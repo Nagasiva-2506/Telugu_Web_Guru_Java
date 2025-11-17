@@ -590,3 +590,60 @@ public class InheritanceExample {
 🧠 Output:
 Name: John
 Company: Google
+
+
+=====================================================================================================================================================================
+METHODS IN JAVA:
+
+A Method represents group of statements that performs a task.
+
+Based on Static Keyword :
+````````````````````````
+Static methods
+Instance methods
+
+Based on parameters:
+````````````````````
+Parameterised methods
+non-Parameterises methods
+
+Based on return type:
+````````````````````
+With return type
+Without return type
+
+
+Difference between function and method ?
+	Functions that are defined inside a class are said to be methods.
+How to create a method ?
+A method can be declared as follows:
+
+static/non static returntype methodname (optional parameters)
+{
+	// method code
+}
+
+
+We can invoke/call the method of a class by using object.
+
+objectname.method(optional parameters)
+
+Here the parameters must be matched with the method definition in number of parameters and their data types.
+following example defines printarray method in class ArEx and it is invoked from main class by creating object .
+
+Example program to demonstrate addition of two numbers using methods concept:
+class MethodAt
+    {
+         public static void main(String ar[])
+         {
+             Sum ob = new Sum();	//obj creation
+             ob.add(2,3);	//method call
+         }
+    }
+class Sum
+    {
+        void add(int a,int b){
+            int addition = a+b;
+            System.out.println("Sum of "+a+" & "+b+" is "+addition);
+        } 
+    }
