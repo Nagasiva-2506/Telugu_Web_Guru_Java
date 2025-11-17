@@ -647,3 +647,114 @@ class Sum
             System.out.println("Sum of "+a+" & "+b+" is "+addition);
         } 
     }
+========================================================================================================================================================================
+CONSTRUCTORS IN JAVA:
+````````````````````
+Constructors in Java are special methods used to initialize objects when they are created. They have the same name as the class and no return type.
+
+🧱 What is a Constructor?
+A constructor is a block of code that:
+- Has the same name as the class
+- Does not have a return type (not even void)
+- Is automatically called when an object is created using new
+- Is used to initialize object properties
+
+📌 Key Rules of Constructors
+- Must have the same name as the class.
+- Cannot be abstract, static, final, or synchronized.
+- Can be overloaded (multiple constructors with different parameters).
+- Can call another constructor using this() or super().
+
+
+✅ Example 1: Default Constructor:
+
+class Car {
+    Car() {
+        System.out.println("Default constructor called");
+    }
+
+    public static void main(String[] args) {
+        Car myCar = new Car(); // Constructor is called here
+    }
+}
+
+Output:
+Default constructor called
+
+✅ Example 2: Parameterized Constructor
+class Car {
+    String model;
+
+    Car(String m) {
+        model = m;
+    }
+
+    public static void main(String[] args) {
+        Car myCar = new Car("Honda City");
+        System.out.println("Model: " + myCar.model);
+    }
+}
+Output:
+Model: Honda City
+
+
+✅ Example 3: Constructor Overloading
+
+
+class Car {
+    String model;
+    int year;
+
+    Car() {
+        model = "Unknown";
+        year = 0;
+    }
+
+    Car(String m, int y) {
+        model = m;
+        year = y;
+    }
+
+    public void display() {
+        System.out.println("Model: " + model + ", Year: " + year);
+    }
+
+    public static void main(String[] args) {
+        Car car1 = new Car();
+        Car car2 = new Car("Hyundai i20", 2022);
+        car1.display();
+        car2.display();
+    }
+}
+Output:
+Model: Unknown, Year: 0
+Model: Hyundai i20, Year: 2022
+
+🔁 Example 4: Copy Constructor
+
+class Car {
+    String model;
+
+    Car(String m) {
+        model = m;
+    }
+
+    // Copy constructor
+    Car(Car c) {
+        model = c.model;
+    }
+
+    public void display() {
+        System.out.println("Model: " + model);
+    }
+
+    public static void main(String[] args) {
+        Car car1 = new Car("Tata Nexon");
+        Car car2 = new Car(car1); // Copy constructor
+        car2.display();
+    }
+}
+Output :
+
+Model: Tata Nexon
+
