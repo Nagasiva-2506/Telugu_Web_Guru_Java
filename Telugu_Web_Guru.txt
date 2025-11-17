@@ -594,7 +594,7 @@ Company: Google
 
 =====================================================================================================================================================================
 METHODS IN JAVA:
-
+```````````````
 A Method represents group of statements that performs a task.
 
 Based on Static Keyword :
