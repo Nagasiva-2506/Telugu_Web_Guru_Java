@@ -822,6 +822,7 @@ Abstract Class:
 
 A class is said to be an abstract class in which it’s having at least one abstract method.
 A method that is just declared without definition is said to be an abstract method.
+Abstract methods can have both abstract methods and concrete methods.
 
 abstract class ex
 {
