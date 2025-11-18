@@ -506,8 +506,8 @@ Polymorphism means “many forms” — it allows one action to behave different
 Achieved through:
 
 Compile-time polymorphism → Method Overloading
-
 Runtime polymorphism → Method Overriding
+
 
 💻 (a) Compile-time Polymorphism - Method Overloading
 class Calculator {
@@ -533,6 +533,7 @@ public class OverloadingExample {
 60
 
 💻 (b) Runtime Polymorphism - Method Overriding
+In this case when we instanciate child class & try calling method ,it will call only methods which are local to child class ,if we want to call super class method then we should use super keyword if parent class is not instanciated.
 class Animal {
     void sound() {
         System.out.println("Animal makes sound");
@@ -547,8 +548,10 @@ class Dog extends Animal {
 
 public class OverridingExample {
     public static void main(String[] args) {
-        Animal a = new Dog(); // upcasting
+        Animal a = new Animal(); 
         a.sound(); // runtime polymorphism
+		Dog d = new Dog();
+		d.sound();
     }
 }
 
@@ -814,3 +817,77 @@ class B extends A
 
 ========================================================================================================
 
+Abstract Class:
+``````````````
+
+A class is said to be an abstract class in which it’s having at least one abstract method.
+A method that is just declared without definition is said to be an abstract method.
+
+abstract class ex
+{
+	void display() // concrete method
+		{
+			System.out.println("hello");
+		}
+	abstract void show(); //abstract method
+}
+
+In above example display method is declared with definition (method code). That's why this is called as concrete method.
+where as show method is called as abstract method because there is no method definition (code) provided with its declaration. All these abstract methods must be implemented in subclasses as it is not done here.
+Because class ex contains at least one abstract method show() , class ex became abstract class.
+Note: As some of the methods in abstract classes are not having method definition, we cannot create objects for abstract classes.
+
+
+//program to demonstrate abstract classes in java
+abstract class CGovt
+{
+    void otherdirections()//concrete methods
+        {
+            System.out.println("I am from otherdirections method");
+        }
+    abstract void actionsTobeTaken(); //abstract method
+    abstract void actionsTobeTaken1(); //abstract method
+}
+class AP extends CGovt
+{
+    void actionsTobeTaken1()
+        {
+         System.out.println("I am from actionsTobeTaken1 in AP");
+        }
+    void actionsTobeTaken()
+        {
+         System.out.println("I am from actionsTobeTaken in AP");
+        }
+}
+class TG extends CGovt
+{
+    void actionsTobeTaken1()
+        {
+         System.out.println("I am from actionsTobeTaken1 in TG");
+        }
+    void actionsTobeTaken()
+        {
+         System.out.println("I am from actionsTobeTaken in TG");
+        }
+}
+class AbsClass
+{
+    public static void main(String ar[])
+    {
+        //CGovt cg = new CGovt();
+        AP ap = new AP();
+        ap.actionsTobeTaken();
+        ap.otherdirections();
+        TG tg = new TG();
+        tg.otherdirections();
+        tg.actionsTobeTaken();
+    }
+}
+
+
+Output:
+```````
+I am from actionsTobeTaken in AP
+I am from otherdirections method
+I am from otherdirections method
+I am from actionsTobeTaken in TG
