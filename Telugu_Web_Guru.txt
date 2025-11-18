@@ -892,3 +892,76 @@ I am from actionsTobeTaken in AP
 I am from otherdirections method
 I am from otherdirections method
 I am from actionsTobeTaken in TG
+
+
+========================================================================================================================================================================
+INTERFACES IN JAVA
+``````````````````
+An Interface is similar to a class which contains collection of variables and methods where all the methods in interface are by default abstract methods and all variables in methods are static and final variables.
+We no need to specify any method or interface with abstract keyword because by default these are abstract. All the methods in interface are implemented in sub classes of this interface.
+As no methods are having definition we cannot create objects for interfaces.
+
+//program to demonstrate the interface concept
+interface A {
+    int p= 10;
+    void display();
+    void show();
+}
+class B implements A{
+    public void display(){
+        System.out.println("Display method in B ,p value in interface :"+A.p);
+    }
+    public void show(){
+       System.out.println("Show method in B ,p value in interface :"+A.p);
+    }
+}
+class main{
+    public static void main(String[] args){
+        B ob = new B();
+        ob.show();
+        ob.display();
+    }
+}
+
+Output:
+Show method in B ,p value in interface :10
+Display method in B ,p value in interface :10
+
+***Multiple inheritance using interface can be acheived .
+While implementing multiple inheritance with interfaces, we should remember that while declaring super classes all the entities must be interfaces or at most one class is allowed.
+
+Example :
+
+class A{
+    void methodA(){
+        System.out.println("This is methodA from class A");
+    }
+}
+interface B{
+    void methodB();
+}
+interface C{
+    void methodC();
+}
+class D extends A implements B,C{
+    public void methodB(){
+        System.out.println("This is methodB from B interface B");
+    }  
+    public void methodC(){
+        System.out.println("This is methodC from interface C");
+    }
+}
+class Main{
+    public static void main(String[] args){
+        D ob = new D();
+        ob.methodA();
+        ob.methodB();
+        ob.methodC();
+    }
+}
+
+Output:
+``````
+This is methodA from class A
+This is methodB from B interface B
+This is methodC from interface C
