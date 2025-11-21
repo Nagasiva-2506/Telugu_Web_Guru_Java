@@ -1000,3 +1000,90 @@ importing one class/interface :
 import packagename.class/interface-name
 importing the whole package with * :
 import packagename.*
+
+===========================================================================================================================================================================
+ACCESS MODIFIERS IN JAVA:
+````````````````````````
+We have 4 types of access specifiers in java
+1) public : public members can be accessible from any class and any package
+2) private : private members are accessible in the class where these are declared only
+3) protected : only non sub classes of other packages are blocked to access these members
+4) No Modifier (Default Modifier) : other package classes are not allowed to access these members.
+
+===========================================================================================================================================================================
+final KEYWORD IN JAVA
+`````````````````````
+final keyword is used to
+1) declare constant variables
+2) prevent method overriding
+3) prevent inheritance
+
+
+final keyword with variables - becomes constants :
+If we declare final keyword with variables, they become constants and system will not allow us to change the value of it.
+
+Example
+class finalvar
+{
+	public static void main(String ar[])
+	{
+		final int a=10;//constant
+		System.out.println("a value is:"+a);
+		//a=11; error
+	}
+}
+
+final keyword with methods – prevents method overriding
+```````````````````````````````````````````````````````
+If we declare methods as final then subclasses are not allowed to override this method. Below example returns error because we can’t override a method once it is declared as final.
+
+Example
+//final with methods to prevent overriding
+class A
+{
+	final void show()
+	{
+		System.out.println("I am show method from A");
+	}
+}
+class B extends A
+{
+	//show from A
+	void show()//error
+	{
+		System.out.println("I am show method from B");
+	}
+}
+class finalmethod
+{
+	public static void main(String ar[])
+	{
+		B ob = new B();
+		ob.show();
+	}
+}
+
+
+final keyword with classes – prevents inheritance
+`````````````````````````````````````````````````
+
+final keyword with classes – prevents inheritance
+
+//program to demonstrate final with classes
+final class Account
+{
+	int balance = 2000;
+}
+class MyAccount extends Account
+{
+//balance
+}
+class finalclass
+{
+	public static void main(String ar[])
+	{
+		MyAccount obj = new MyAccount();
+		obj.balance=50000;
+		System.out.println(obj.balance);
+	}
+}
