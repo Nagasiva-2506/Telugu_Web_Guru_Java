@@ -965,3 +965,38 @@ Output:
 This is methodA from class A
 This is methodB from B interface B
 This is methodC from interface C
+
+=============================================================================================================================================
+PACKAGES IN JAVA
+````````````````
+A package represents a directory that contains related group of classes and interfaces.
+Advantages of packages:
+1) All the related classes and interfaces are at one place so we can easily access all of these classes and interfaces
+2) There will be no name collisions.
+How to create a package ?
+we can create a package by using package keyword as follows
+package packagename;
+How to insert classes into the package ?
+Whatever classes we declared under package statement those all classes will be automatically added under package.
+Example
+package twg;
+class A{
+}
+class B{
+}
+
+
+In above example as class A, class B are declared under package statement these two classes were automatically added under package “twg”.
+Note: class in a file must be declared as public and we must save our program with that file name. if it is main class then it will automatically be public so no need to declare as public explicitly.
+
+How to compile and Run package programs:
+packages are nothing but directories so we need to create a folder manually with the package name and we need to save the java program in that directory.
+or we can use the following command that will create a folder automatically with the package name and places the class file into that folder.
+javac -d . programname.java
+
+Accessing members of classes & interfaces from other packages :
+To access the members (variables / methods) of any class or interface from other packages, then we need to import the particular class or interface or we need to import the entire package. then only we can access the members.
+importing one class/interface :
+import packagename.class/interface-name
+importing the whole package with * :
+import packagename.*
